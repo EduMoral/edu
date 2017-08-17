@@ -15,7 +15,9 @@ import edu.moral.mapper.TbItemDescMapper;
 import edu.moral.mapper.TbItemMapper;
 import edu.moral.pojo.TbItem;
 import edu.moral.pojo.TbItemDesc;
+import edu.moral.pojo.TbItemDescExample;
 import edu.moral.pojo.TbItemExample;
+import edu.moral.pojo.TbItemExample.Criteria;
 import edu.moral.service.ItemService;
 import edu.moral.utils.IDUtils;
 
@@ -80,6 +82,62 @@ public class ItemServiceImpl implements ItemService {
 			itemDesc.setUpdated(date);
 			//插入数据
 			itemDescMapper.insert(itemDesc);
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw(e);
+		}
+	}
+
+	@Override
+	public TbItemDesc getItemDesc(Long id) throws Exception {
+		TbItemDesc itemDesc = null;
+		try {
+			itemDesc = itemDescMapper.selectByPrimaryKey(id);
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw(e);
+		}
+		
+		return itemDesc;
+	}
+
+	@Override
+	public void updateItem(TbItem item, String desc, String itemParams) throws Exception {
+		try {
+			Date date = new Date();
+			item.setUpdated(date);
+			TbItemExample example = new TbItemExample();
+			Criteria criteria = example.createCriteria();
+			criteria.andIdEqualTo(item.getId());
+			itemMapper.updateByExampleSelective(item, example);
+			//添加商品描述
+			//创建TbItemDesc对象
+			TbItemDesc itemDesc = new TbItemDesc();
+			//获得一个商品id
+			itemDesc.setItemDesc(desc);
+			itemDesc.setUpdated(date);
+			TbItemDescExample descExample = new TbItemDescExample();
+			edu.moral.pojo.TbItemDescExample.Criteria descCriteria = descExample.createCriteria();
+			descCriteria.andItemIdEqualTo(item.getId());
+			//插入数据
+			itemDescMapper.updateByExampleSelective(itemDesc, descExample);
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw(e);
+		}
+	}
+
+	@Override
+	public void deleteItems(List<Long> ids) throws Exception {
+		try {
+			TbItemDescExample descExample = new TbItemDescExample();
+			edu.moral.pojo.TbItemDescExample.Criteria descCriteria = descExample.createCriteria();
+			descCriteria.andItemIdIn(ids);
+			itemDescMapper.deleteByExample(descExample);
+			
+			for(Long id : ids){
+				itemMapper.deleteByPrimaryKey(id);
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw(e);
