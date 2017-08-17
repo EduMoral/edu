@@ -8,4 +8,16 @@
 	</parent>
 	<artifactId>ego-common</artifactId>
 	<version>1.0</version>
+
+	<dependencies>
+		<dependency>
+			<groupId>commons-net</groupId>
+			<artifactId>commons-net</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
+	</dependencies>
 </project>
