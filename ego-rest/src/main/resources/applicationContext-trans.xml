@@ -38,6 +38,6 @@
 	<!-- 切面 -->
 	<aop:config>
 		<aop:advisor advice-ref="txAdvice"
-			pointcut="execution(* edu.moral.service.*.*(..))" />
+			pointcut="execution(* edu.moral.rest.service.*.*(..))" />
 	</aop:config>
 </beans>

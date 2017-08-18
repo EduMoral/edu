@@ -5,7 +5,7 @@
 	id="ego" version="2.5">
 	<display-name>ego-rest</display-name>
 	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
 	
 	<!-- 加载spring容器 -->
@@ -48,7 +48,7 @@
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>ego-restr</servlet-name>
+		<servlet-name>ego-rest</servlet-name>
 		<url-pattern>/rest/*</url-pattern>
 	</servlet-mapping>
 	

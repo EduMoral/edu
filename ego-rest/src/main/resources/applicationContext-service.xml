@@ -8,6 +8,6 @@
 	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
 	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
 
-		<context:component-scan base-package="edu.moral.service"/>
+		<context:component-scan base-package="edu.moral.rest.service"/>
 
 </beans>
