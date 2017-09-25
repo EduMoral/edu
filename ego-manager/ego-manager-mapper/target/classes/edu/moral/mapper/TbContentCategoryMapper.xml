@@ -103,6 +103,11 @@
     </if>
   </delete>
   <insert id="insert" parameterType="edu.moral.pojo.TbContentCategory" >
+  	<selectKey keyProperty="id" resultType="long" order="AFTER">
+  		<!-- 添加主键返回 -->
+  		select last_insert_id();
+  	</selectKey>
+  
     insert into tb_content_category (id, parent_id, name, 
       status, sort_order, is_parent, 
       created, updated)

@@ -1,4 +1,4 @@
-﻿package yxxy.c_026;
+package yxxy.c_026;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -54,6 +54,7 @@ public class T12_ForkJoinPool {
 	
 	static class AddTask extends RecursiveTask<Long> { 
 		
+		private static final long serialVersionUID = 1L;
 		int start, end;
 		
 		AddTask(int s, int e) {

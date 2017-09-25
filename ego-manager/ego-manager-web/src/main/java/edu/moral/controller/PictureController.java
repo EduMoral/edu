@@ -25,7 +25,6 @@ public class PictureController {
 		try {
 			pictureResult = pictureService.uploadFile(uploadFile);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		//返回上传结果

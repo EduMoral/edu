@@ -17,6 +17,13 @@
 			<artifactId>ego-manager-mapper</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>edu.ego</groupId>
+			<artifactId>ego-common</artifactId>
+			<version>1.0</version>
+		</dependency>
+		
 		<!-- MySql -->
 		<dependency>
 			<groupId>mysql</groupId>
@@ -56,6 +63,12 @@
 		<dependency>
 			<groupId>redis.clients</groupId>
 			<artifactId>jedis</artifactId>
+		</dependency>
+
+		<!-- Jackson Json处理工具包 -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
 		</dependency>
 	</dependencies>
 	<build>

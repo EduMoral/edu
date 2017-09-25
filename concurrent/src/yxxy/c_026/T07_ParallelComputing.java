@@ -1,4 +1,4 @@
-﻿/**
+/**
  * 线程池的概念
  * nasa
  */
@@ -15,7 +15,7 @@ import java.util.concurrent.Future;
 public class T07_ParallelComputing {
 	public static void main(String[] args) throws InterruptedException, ExecutionException {
 		long start = System.currentTimeMillis();
-		List<Integer> results = getPrime(1, 200000); 
+		getPrime(1, 200000); 
 		long end = System.currentTimeMillis();
 		System.out.println(end - start);
 		

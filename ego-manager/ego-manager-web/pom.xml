@@ -123,6 +123,11 @@
 			<artifactId>jsp-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.solr</groupId>
+			<artifactId>solr-solrj</artifactId>
+		</dependency>
+
 		<!-- 文件上传组件 -->
 		<dependency>
 			<groupId>commons-fileupload</groupId>
